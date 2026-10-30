@@ -102,7 +102,7 @@ function AddGameModal({ onClose }: { onClose: () => void }) {
   );
 }
 
-function App() {
+function App({ userEmail, onSignOut }: { userEmail: string; onSignOut: () => void }) {
   const [active, setActive] = useState<Section>("inicio");
   const [modalOpen, setModalOpen] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
@@ -135,7 +135,7 @@ function App() {
         <header className="topbar">
           <button className="icon-button mobile-menu" onClick={() => setMobileNav(true)} aria-label="Abrir menu"><Menu size={20} /></button>
           <div className="search-wrap"><Search size={17} /><input aria-label="Buscar" placeholder="Buscar na sua biblioteca..." value={search} onChange={(e) => setSearch(e.target.value)} /></div>
-          <div className="topbar-actions"><button className="icon-button" aria-label="Ajuda"><CircleHelp size={19} /></button><div className="top-divider" /><button className="account-button"><span className="avatar"><UserRound size={18} /></span><span><b>Visitante</b><small>Prévia da plataforma</small></span><ChevronDown size={15} /></button></div>
+          <div className="topbar-actions"><button className="icon-button" aria-label="Ajuda"><CircleHelp size={19} /></button><div className="top-divider" /><button className="account-button" onClick={onSignOut} title="Sair da conta"><span className="avatar"><UserRound size={18} /></span><span><b>{userEmail}</b><small>Sair da conta</small></span><ChevronDown size={15} /></button></div>
         </header>
 
         <div className="content-grid">
@@ -164,7 +164,7 @@ function App() {
           </section>
 
           <aside className="right-rail">
-            <section className="rail-card welcome-card"><div className="rail-card-heading"><span className="eyebrow">SEU ESPAÇO</span><span className="live-dot" /></div><div className="profile-row"><span className="profile-avatar"><UserRound size={24} /></span><div><strong>Visitante</strong><small>Conheça a RETROVA</small></div></div><div className="rail-divider" /><p className="rail-copy">Uma biblioteca pessoal para os jogos clássicos que você já possui.</p></section>
+            <section className="rail-card welcome-card"><div className="rail-card-heading"><span className="eyebrow">SEU ESPAÇO</span><span className="live-dot" /></div><div className="profile-row"><span className="profile-avatar"><UserRound size={24} /></span><div><strong>{userEmail}</strong><small>Jogador RETROVA</small></div></div><div className="rail-divider" /><p className="rail-copy">Uma biblioteca pessoal para os jogos clássicos que você já possui.</p></section>
             <section className="rail-card"><div className="rail-title"><HardDrive size={17} /><h3>Privacidade primeiro</h3></div><div className="privacy-visual"><div className="privacy-orbit"><LockKeyhole size={23} /></div><div><strong>Biblioteca pessoal</strong><small>Separada por conta de usuário</small></div></div><p className="rail-footnote">O armazenamento privado será configurado junto com a autenticação e o backend.</p></section>
             <section className="rail-card activity-card"><div className="rail-title"><Activity size={17} /><h3>Atividade</h3></div><div className="activity-empty"><div className="activity-icon"><Compass size={21} /></div><strong>Nenhuma atividade ainda</strong><p>Quando você começar sua coleção, suas atualizações aparecerão aqui.</p></div></section>
             <section className="rail-note"><Sparkles size={17} /><p><strong>Feita para sua coleção.</strong><br />Sem catálogo compartilhado de ROMs. Os jogos são adicionados pelo próprio usuário.</p></section>
