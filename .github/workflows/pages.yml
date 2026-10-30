@@ -29,6 +29,9 @@ jobs:
         run: npm install
       - name: Validar e compilar interface
         run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
       - name: Preparar artefato do site
         uses: actions/upload-pages-artifact@v3
         with:
