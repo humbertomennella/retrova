@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import {
-  Activity, Archive, ArrowRight, Award, Bell, Check, ChevronDown, ChevronRight,
-  CircleHelp, CloudUpload, Command, Compass, Cpu, Gamepad2, HardDrive,
+  Activity, Archive, ArrowRight, Check, ChevronDown, ChevronRight,
+  CircleHelp, CloudUpload, Compass, Cpu, Gamepad2, HardDrive,
   Home, Library, LockKeyhole, Menu, Plus, Search, Settings2, ShieldCheck,
   Sparkles, Trophy, Users, UserRound, X, Zap
 } from "lucide-react";
