@@ -1,4 +1,5 @@
-import { FormEvent, useState } from "react";
+import { useState } from "react";
+import type { FormEvent } from "react";
 import { ArrowRight, Eye, EyeOff, Gamepad2, LockKeyhole, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import { isSupabaseConfigured, supabase } from "./lib/supabase";
 
