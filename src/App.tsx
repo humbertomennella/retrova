@@ -108,9 +108,6 @@ function App() {
   const [mobileNav, setMobileNav] = useState(false);
   const [search, setSearch] = useState("");
 
-  const pageTitles: Record<Section, string> = {
-    inicio: "Início", biblioteca: "Minha biblioteca", consoles: "Sistemas", conquistas: "Conquistas", amigos: "Amigos", perfil: "Meu perfil"
-  };
 
   return (
     <div className="app-shell">
